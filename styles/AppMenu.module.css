@@ -1,0 +1,13 @@
+.menu {
+    position: absolute;
+    z-index: 1;
+    margin: 10px;
+    width: 90%
+}
+
+@media only screen and (min-width: 769px) {
+    .menu {
+        width: 75%;
+    }
+}
+

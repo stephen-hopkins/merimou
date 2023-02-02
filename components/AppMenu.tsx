@@ -1,6 +1,7 @@
 import React from 'react';
 import {Menubar} from "primereact/menubar";
 import SearchPlaces from "@/components/SearchPlaces";
+import styles from '@/styles/AppMenu.module.css'
 
 function AppMenu() {
 
@@ -21,9 +22,7 @@ function AppMenu() {
   ];
 
   return (
-    <menu>
-      <Menubar end={<SearchPlaces />} model={items} />
-    </menu>
+    <Menubar end={<SearchPlaces />} model={items} className={styles.menu}/>
   );
 }
 

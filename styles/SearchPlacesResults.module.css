@@ -1,0 +1,20 @@
+.wrapper .results {
+    position: absolute;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    width: 100%
+}
+
+.confirm {
+    display: flex;
+    justify-content: space-around;
+}
+
+.result > small {
+    margin-left: 0.25rem;
+}
+
+.formline {
+    margin-top: 1rem;
+}
