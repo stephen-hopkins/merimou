@@ -1,0 +1,39 @@
+name: test and deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_deploy:
+    env:
+      NEXT_PUBLIC_GOOGLEMAPS_APIKEY: ${{ secrets.NEXT_PUBLIC_GOOGLEMAPS_APIKEY }}
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Test
+        run: npm test
+
+      - name: Deploy
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-args: '--prod'
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
