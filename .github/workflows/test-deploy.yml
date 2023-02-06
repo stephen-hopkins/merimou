@@ -6,8 +6,6 @@ on:
 
 jobs:
   test_deploy:
-    env:
-      NEXT_PUBLIC_GOOGLEMAPS_APIKEY: ${{ secrets.NEXT_PUBLIC_GOOGLEMAPS_APIKEY }}
 
     runs-on: ubuntu-latest
 
