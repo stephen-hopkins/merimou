@@ -14,15 +14,11 @@ function AppMenu() {
           label: 'Default',
         }
       ]
-    },
-    {
-      label: 'Add',
-      icon: 'pi pi-plus'
     }
   ];
 
   return (
-    <Menubar end={<SearchPlaces />} model={items} className={styles.menu}/>
+    <Menubar start={<SearchPlaces />} model={items} className={styles.menu}/>
   );
 }
 

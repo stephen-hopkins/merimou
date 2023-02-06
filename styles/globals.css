@@ -112,3 +112,7 @@ a {
     color-scheme: dark;
   }
 }
+
+.p-menubar .p-menubar-root-list {
+  margin-left: auto;
+}
